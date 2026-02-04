@@ -89,3 +89,14 @@ El proyecto sigue una arquitectura modular para facilitar el mantenimiento y la 
 **dataBase/:** Contiene los scripts SQL para la creación del esquema (DDL) y las consultas de negocio (DML) solicitadas en la Parte 2 del reto.
 
 **reports/:** Directorio autogenerado que almacena los reportes HTML, capturas de pantalla de errores y grabaciones de video de las ejecuciones.
+
+
+## Evidencia de Ejecución (Videos & Screenshots)
+El framework está configurado para capturar evidencias de video de forma automática en cada ejecución para garantizar la trazabilidad de los errores y el éxito de los flujos.
+
+**Gestión de Archivos:**
+Ruta de Videos: reports/videos/*.webm (Generados en cada escenario).
+
+Ruta de Screenshots: reports/screenshots/*.png (Generados automáticamente solo en caso de fallo).
+
+![Evidencia de videos y reportes](asset/evidencia.jpg)
