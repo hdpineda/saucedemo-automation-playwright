@@ -14,4 +14,18 @@ Feature: Automatización de flujos en SauceDemo
     And completa el proceso de checkout con los datos "Harold", "QA" y "110111"
     Then el sistema debería mostrar el mensaje de confirmación "Thank you for your order!"
 
-  
+  @negative @regression
+  Scenario: Usuario bloqueado
+    When ingresa el usuario "locked_out_user" y la contraseña "secret_sauce"
+    Then debería visualizarse el mensaje de error "Epic sadface: Sorry, this user has been locked out."
+
+  @regression
+  Scenario Outline: Validación de diferentes tipos de usuario
+    When ingresa el usuario "<usuario>" y la contraseña "secret_sauce"
+    Then el usuario debería ser redirigido a la página de inventario "/inventory.html"
+
+    Examples:
+      | usuario                 |
+      | standard_user           |
+      | problem_user            |
+      | performance_glitch_user |

@@ -19,3 +19,9 @@ Then('el usuario debería ser redirigido a la página de inventario {string}', a
     const loginPage = new LoginPage(this.page!);
     await loginPage.validateRedirection(expectedPath);
 });
+
+//Validación de mensajes de error para escenarios negativos.
+Then('debería visualizarse el mensaje de error {string}', async function (this: CustomWorld, expectedError: string) {
+    const loginPage = new LoginPage(this.page!);
+    await loginPage.validateErrorMessage(expectedError);
+});
